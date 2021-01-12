@@ -127,12 +127,12 @@ export default {
 		width: {
 			required: false,
 			type: Number,
-			default: 0,
+			default: null,
 		},
 		height: {
 			required: false,
 			type: Number,
-			default: 0,
+			default: null,
 		},
     },
     data() {
@@ -228,8 +228,13 @@ export default {
                 let formData = new FormData();
                 formData.append('file', file);
 				formData.append('collection', this.collection);
-				formData.append('width', this.width);
-				formData.append('height', this.height);
+				if(this.width){
+					formData.append('width', this.width);
+				}
+				if(this.height){
+					formData.append('height', this.height);
+				}
+				
                 let xhr = new XMLHttpRequest();
                 xhr.onreadystatechange = function () {
                     if (this.readyState === 4) {
