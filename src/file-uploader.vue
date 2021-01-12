@@ -127,12 +127,12 @@ export default {
 		width: {
 			required: false,
 			type: Number,
-			default: 1024,
+			default: 0,
 		},
 		height: {
 			required: false,
 			type: Number,
-			default: 1024,
+			default: 0,
 		},
     },
     data() {
